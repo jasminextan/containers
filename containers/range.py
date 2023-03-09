@@ -56,4 +56,4 @@ def range(a, b=None, c=None):
         else:
             while result > b:
                 yield result
-                result +=
+                result += c
