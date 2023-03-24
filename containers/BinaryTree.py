@@ -1,6 +1,6 @@
 '''
 This file implements the Node and BinaryTree classes.
-These two classes are the building blocks for the BST, AVLTree, and Heap data structures.
+blocks for the BST, AVLTree, and Heap data structures.
 It is crucial to get these implemented
 correctly in order to be able to implement the other data structures.
 '''
@@ -9,7 +9,8 @@ correctly in order to be able to implement the other data structures.
 class Node():
     '''
     You do not have to implement anything within this class.
-    Given a node t, you can visualize the node by running str(t) in the python interpreter.
+    Given a node t, you can
+    visualize the node by running str(t) in the python interpreter.
     This is a key method to perform debugging,
     so you should get familiar with how to visualize these strings.
     '''
@@ -63,9 +64,11 @@ class BinaryTree():
 
     def print_tree(self, traversal_type):
         '''
-        There are three primary types of tree traversals: preorder, inorder, and postorder.
+        There are three primary
+        types of tree traversals: preorder, inorder, and postorder.
         All three of these traversals are implemented for you
-        as a reference on how to write recursive functions on recursive data structures.
+        as a reference on how to
+        write recursive functions on recursive data structures.
         '''
         if traversal_type == 'preorder':
             return self.preorder_print(self.root, '')
@@ -74,7 +77,8 @@ class BinaryTree():
         elif traversal_type == 'postorder':
             return self.postorder_print(self.root, '')
         else:
-            raise ValueError('Traversal type ' + str(traversal_type) + ' is not supported.')
+            raise ValueError('Traversal type ' + str(traversal_type) + 'is \
+                             not supported.')
 
     def preorder_print(self, start, traversal):
         '''
@@ -135,7 +139,7 @@ class BinaryTree():
             return self.postorder(self.root, [])
         else:
             raise ValueError('Traversal type ' + str(traversal_type) + 'is \
-                             not supported.')i
+                             not supported.')
 
     def preorder(self, start, traversal):
         '''
@@ -186,8 +190,10 @@ class BinaryTree():
         HINT:
         The pseudocode is:
         add 1 for the current node;
-        if a left child exists, add the result of __len__helper on the left child;
-        if a right child exists, add the result of __len__helper on the right child;
+        if a left child exists,
+        add the result of __len__helper on the left child;
+        if a right child exists,
+        add the result of __len__helper on the right child;
         return the sum of these three steps
         '''
         if node is None:
@@ -202,7 +208,8 @@ class BinaryTree():
     def height(self):
         '''
         Returns the height of the tree.
-        Recall that the height is the maximum length from the root to a leaf node.
+        Recall that
+        the height is the maximum length from the root to a leaf node.
 
         FIXME:
         Implement this function.
@@ -222,7 +229,8 @@ class BinaryTree():
         The pseudocode is:
         if a left child exists, calculate the _height of the left child;
         if a right child exists, calculate the _height of the right child;
-        return 1 (for the current node) plus the max of the left and right _heights calculated above
+        return 1 (for the current node) plus
+        the max of the left and right _heights calculated above
         '''
         if node is None:
             return -1
