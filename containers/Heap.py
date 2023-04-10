@@ -203,22 +203,27 @@ class Heap(BinaryTree):
         elif num_nodes == 1:
             self.root = None
 
-
     @staticmethod
     def _remove_bottom_right(node, binary_str):
         if len(binary_str) == 1:
-            removed = node.left.value if binary_str[0] == '0' else node.right.value
+            removed = node.left.value if \
+                    binary_str[0] == '0' else node.right.value
             setattr(node, 'left' if binary_str[0] == '0' else 'right', None)
         else:
-            removed = Heap._remove_bottom_right(node.left if binary_str[0] == '0' else node.right, binary_str[1:])
+            removed = Heap._remove_bottom_right(node.left
+                                                if binary_str[0]
+                                                == '0' else node.right,
+                                                binary_str[1:])
         return removed
 
     @staticmethod
     def _trickle(node):
         if node.left and node.right:
-            target_child = 'left' if node.left.value < node.right.value else 'right'
+            target_child = 'left' if \
+                    node.left.value < node.right.value else 'right'
             if node.value > getattr(node, target_child).value:
-                node.value, getattr(node, target_child).value = getattr(node, target_child).value, node.value
+                node.value, getattr(node, target_child).value \
+                        = getattr(node, target_child).value, node.value
                 Heap._trickle(getattr(node, target_child))
         elif node.left and node.value > node.left.value:
             node.value, node.left.value = node.left.value, node.value
